@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Number Generator</title>
+  </head>
+  <body>
+    <h1>Random Number Generator</h1>
+    <input type="button" onclick="random()" value="Get Random Number">
+    <input type="text" id="randomnumber" disabled="disabled">
+  </body>
+  <script>
+    function random() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+              console.log(xhr.readyState);
+              if( xhr.readyState == 4) {
+                  document.getElementById("randomnumber").value = xhr.responseText;
+              }
+            }
+
+            xhr.open("GET", "/random", true);
+            xhr.send(null);
+        }
+  </script>
+</html>

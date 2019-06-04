@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EJS view test</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2><%= topic %></h2>
+    <!-- <h3><%= status %></h3> -->
+    <h3>
+      <%= status %>
+      <% if(status == 0){ %>
+        Not started
+      <% } else if(status==1){ %>
+        Going on
+      <% } else { %>
+        Done
+      <% } %>
+      <% fruits.forEach(function(fruit) { %>
+        <h4><%= fruit %></h4>
+      <% }); %>
+    </h3>
+    <h5> <%= error.code %> <%= error.msg %></h5>
+  </body>
+</html>
